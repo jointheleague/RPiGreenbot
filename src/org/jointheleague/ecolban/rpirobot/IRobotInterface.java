@@ -17,7 +17,7 @@ public interface IRobotInterface {
 	/**
 	 * Identifies the sensor Group 0. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_BUMPS_AND_WHEEL_DROPS, <br>
 	 * SENSORS_WALL, <br>
 	 * SENSORS_CLIFF_LEFT, <br>
@@ -43,7 +43,7 @@ public interface IRobotInterface {
 	/**
 	 * Identifies the sensor Group 1. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_BUMPS_AND_WHEEL_DROPS, <br>
 	 * SENSORS_WALL, <br>
 	 * SENSORS_CLIFF_LEFT, <br>
@@ -54,22 +54,24 @@ public interface IRobotInterface {
 	 * SENSORS_LOWS_SIDE_DRIVER_AND_WHEEL_OVERCURRENTS, <br>
 	 * SENSORS_DIRT_DETECT, <br>
 	 * SENSORS_DUMMY22
+	 * </p>
 	 */
 	int SENSORS_GROUP_ID1 = 1;
 	/**
 	 * Identifies the sensor Group 2. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_INFRARED_BYTE, <br>
 	 * SENSORS_BUTTONS, <br>
 	 * SENSORS_DISTANCE, <br>
 	 * SENSORS_ANGLE
+	 * </p>
 	 */
 	int SENSORS_GROUP_ID2 = 2;
 	/**
 	 * Identifies the sensor Group 3. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_CHARGING_STATE, SENSORS_VOLTAGE, <br>
 	 * SENSORS_CURRENT, <br>
 	 * SENSORS_BATTERY_TEMPERATURE, <br>
@@ -80,7 +82,7 @@ public interface IRobotInterface {
 	/**
 	 * Identifies the sensor Group 4. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_WALL_SIGNAL, <br>
 	 * SENSORS_CLIFF_SIGNAL_LEFT, <br>
 	 * SENSORS_CLIFF_SIGNAL_LEFT_FRONT, <br>
@@ -94,7 +96,7 @@ public interface IRobotInterface {
 	/**
 	 * Identifies the sensor Group 5. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_OI_MODE, <br>
 	 * SENSORS_SONG_NUMBER, <br>
 	 * SENSORS_SONG_PLAYING, <br>
@@ -108,7 +110,7 @@ public interface IRobotInterface {
 	/**
 	 * Identifies the sensor Group 6. This group includes the sensors identified
 	 * by the following ids:
-	 * <p/>
+	 * <p>
 	 * SENSORS_BUMPS_AND_WHEEL_DROPS, <br>
 	 * SENSORS_WALL, <br>
 	 * SENSORS_CLIFF_LEFT, <br>
@@ -155,7 +157,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Identifies the sensors group 101. This group includes sensors:
-	 * <p/>
+	 * <p>
 	 * SENSORS_ENCODER_COUNT_LEFT <br>
 	 * SENSORS_ENCODER_COUNT_RIGHT <br>
 	 * SENSORS_LIGHT_BUMPER <br>
@@ -177,7 +179,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Identifies the sensors group 106. This group includes:
-	 * <p/>
+	 * <p>
 	 * SENSORS_LIGHT_BUMP_SIGNAL_LEFT<br>
 	 * SENSORS_LIGHT_BUMP_SIGNAL_LEFT_FRONT<br>
 	 * SENSORS_LIGHT_BUMP_SIGNAL_LEFT_CENTER<br>
@@ -189,7 +191,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Identifies the sensors group 107. This group includes sensors:
-	 * <p/>
+	 * <p>
 	 * SENSORS_MOTOR_CURRENT_LEFT<br>
 	 * SENSORS_MOTOR_CURRENT_RIGHT<br>
 	 * SENSORS_MAIN_BRUSH_MOTOR_CURRENT<br>
@@ -519,12 +521,12 @@ public interface IRobotInterface {
 	 * makes the iRobot turn toward the right. Special cases for the radius make
 	 * iRobot turn in place or drive straight, as specified below. A negative
 	 * velocity makes iRobot drive backward. Available in modes: Safe or Full
-	 * <p/>
+	 * <p>
 	 * NOTE: Internal and environmental restrictions may prevent the iRobot from
 	 * accurately carrying out some drive commands. For example, it may not be
 	 * possible for the iRobot to drive at full speed in an arc with a large
 	 * radius of curvature.
-	 * <p/>
+	 * <p>
 	 * Special cases of radius:
 	 * <ul>
 	 * <li>Straight 32768 or 32767 = hex 8000 or 7FFF<br>
@@ -562,29 +564,34 @@ public interface IRobotInterface {
 	 * command that you send it, even if the internal charger is plugged in, or
 	 * the robot senses a cliff or wheel drop. Available in modes: Passive,
 	 * Safe, or Full <br>
-	 * <p/>
+	 * <p>
 	 * Note: Before invoking this method a connection to the iRobot must have
 	 * been established.
+	 * </p>
 	 * 
 	 * @throws IOException
 	 */
 	void full() throws IOException;
 
 	/**
+	 * <p>
 	 * Gets the angle in degrees that the iRobot has turned from the time before
 	 * last that the angle sensor was read to the last time the angle sensor was
 	 * read. Counter-clockwise angles are positive and clockwise angles are
 	 * negative. If the value is not polled frequently enough, it is capped at
 	 * its minimum or maximum, which are -32768 and 32767 respectively.
-	 * <p/>
+	 * </p>
+	 * <p>
 	 * <b>NOTE:</b> The iRobot uses wheel encoders to measure distance and
 	 * angle. If the wheels slip, the actual distance or angle traveled may
 	 * differ from the iRobot's measurements.
-	 * <p/>
+	 * </p>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
+	 * </p>
 	 *
 	 * @return The angle in degrees that the iRobot has turned.
 	 * @see #readSensors(int sensorId)
@@ -595,7 +602,7 @@ public interface IRobotInterface {
 	 * Gets the estimated charge capacity of the iRobot's battery in
 	 * milliamphours (mAh). Note that this value is inaccurate if you are using
 	 * the alkaline battery pack.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -608,36 +615,41 @@ public interface IRobotInterface {
 	int getBatteryCapacity();
 
 	/**
+	 * <p>
 	 * The current charge of iRobot's battery in milliamp-hours (mAh). The
 	 * charge value decreases as the battery is depleted during running and
 	 * increases when the battery is charged. <br>
 	 * Note that this value will not be accurate if you are using the alkaline
 	 * battery pack.
-	 * <p/>
+	 * </p>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
-	 *
+	 *</p>
 	 * @return The battery capacity in mAh.
 	 * @see #readSensors(int sensorId)
 	 */
 	int getBatteryCharge();
 
 	/**
+	 * <p>
 	 * The temperature of the iRobot's battery in degrees Celsius. <br>
-	 * <p/>
+	 * </p>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
-	 *
+	 * </p>
 	 * @return The battery temperature in degrees Celsius.
 	 * @see #readSensors(int sensorId)
 	 */
 	int getBatteryTemperature();
 
 	/**
+	 * <p>
 	 * This code indicates the iRobot's current charging state. The state is
 	 * encoded as follows:
 	 * <ul>
@@ -648,13 +660,12 @@ public interface IRobotInterface {
 	 * <li>4 -- Waiting
 	 * <li>5 -- Fault condition
 	 * </ul>
-	 * <p/>
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
-	 *
+	 *</p>
 	 * @return The iRobot's charging state.
 	 * @see #readSensors(int sensorId)
 	 */
@@ -663,12 +674,12 @@ public interface IRobotInterface {
 	/**
 	 * Gets the strength of the front left cliff sensor's signal. The strength
 	 * is returned as a value between 0 and 4095.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
-	 *
+	 * </p>
 	 * @return the strength of the front left cliff sensor signal.
 	 * @see #readSensors(int sensorId)
 	 */
@@ -677,7 +688,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the strength of the front right cliff sensor's signal. The strength
 	 * is returned as a value between 0 and 4095.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -717,7 +728,7 @@ public interface IRobotInterface {
 	 * battery. Negative currents indicate that the current is flowing out of
 	 * the battery, as during normal running. Positive currents indicate that
 	 * the current is flowing into the battery, as during charging.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -736,12 +747,12 @@ public interface IRobotInterface {
 	 * in the forward direction; negative values indicate travel in the reverse
 	 * direction. If the value is not polled frequently enough, it is capped at
 	 * its minimum or maximum, which are -32768 amd 32767 respectively.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
-	 *
+	 * </p>
 	 * @return the travelled distance in mm
 	 * @see #readSensors(int sensorId)
 	 */
@@ -751,7 +762,7 @@ public interface IRobotInterface {
 	 * Gets the left encoder count. This number will roll over to 0 after it
 	 * passes 65535.There are 508.8 counts per revolution. The wheel diameter is
 	 * 72mm and the distance between the wheels is 235mm.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -765,7 +776,7 @@ public interface IRobotInterface {
 	 * Gets the right encoder count. This number will roll over to 0 after it
 	 * passes 65535. There are 508.8 counts per revolution. The wheel diameter
 	 * is 72mm and the distance between the wheels is 235mm.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -778,7 +789,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the value of the IR byte received by the iRobot. The value is
 	 * encoded as follows:
-	 * <p/>
+	 * <p>
 	 * Remote control values:
 	 * <ul>
 	 * <li>129 Left
@@ -812,7 +823,7 @@ public interface IRobotInterface {
 	 * <li>254 Red Buoy, Green Buoy and Force Field
 	 * <li>255 No value received
 	 * </ul>
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -826,7 +837,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the value of the IR byte received by the iRobot. The value is
 	 * encoded as follows:
-	 * <p/>
+	 * <p>
 	 * Remote control values:
 	 * <ul>
 	 * <li>129 Left
@@ -860,7 +871,7 @@ public interface IRobotInterface {
 	 * <li>254 Red Buoy, Green Buoy and Force Field
 	 * <li>255 No value received
 	 * </ul>
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -874,7 +885,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the value of the IR byte received by the iRobot. The value is
 	 * encoded as follows:
-	 * <p/>
+	 * <p>
 	 * Remote control values:
 	 * <ul>
 	 * <li>129 Left
@@ -908,7 +919,7 @@ public interface IRobotInterface {
 	 * <li>254 Red Buoy, Green Buoy and Force Field
 	 * <li>255 No value received
 	 * </ul>
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -928,7 +939,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Returns an array of length 6 where the values are from 0 to 5:
-	 * <p/>
+	 *
 	 * <ul>
 	 * <li>Light Bump Left
 	 * <li>Light Bump Front Left
@@ -937,10 +948,10 @@ public interface IRobotInterface {
 	 * <li>Light Bump Front Right
 	 * <li>Light Bump Right
 	 * </ul>
-	 * <p/>
+	 * <p>
 	 * The returned values are the signal strengths, where the maximum strength
 	 * is 4095.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -965,8 +976,8 @@ public interface IRobotInterface {
 	 * <li>1 - Passive
 	 * <li>2 - Safe
 	 * <li>3 - Full
-	 * <ul>
-	 * <p/>
+	 * </ul>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -980,7 +991,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the turn radius in mm most recently requested using the drive()
 	 * method.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -995,7 +1006,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the average wheel velocity in mm/s most recently requested using the
 	 * driveDirect() or drive() method.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1011,7 +1022,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the left wheel velocity in mm/s most recently requested using the
 	 * driveDirect() or drive() method.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1027,7 +1038,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the right wheel velocity in mm/s most recently requested using the
 	 * driveDirect() or drive() method.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1042,7 +1053,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the currently selected OI song song number.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1055,7 +1066,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the voltage of iRobot's battery in millivolts (mV).
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1078,7 +1089,7 @@ public interface IRobotInterface {
 	/**
 	 * Gets the strength of the wall sensor's signal as a number between 0 and
 	 * 4095.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1091,7 +1102,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the left bumper.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1104,7 +1115,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the right bumper.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1117,7 +1128,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the Clean button
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1132,7 +1143,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the front right cliff sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1145,7 +1156,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the left cliff sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1158,7 +1169,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the right cliff sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1171,7 +1182,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the availability of the home base charger.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1184,7 +1195,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the availability of the internal charger.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1197,13 +1208,13 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the left wheel overcurrent sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
 	 *
-	 * @return true if too much current (> 1A) is requested.
+	 * @return true if too much current (&gt; 1A) is requested.
 	 * @see #readSensors(int sensorId)
 	 */
 	boolean isLeftWheelOvercurrent();
@@ -1221,7 +1232,7 @@ public interface IRobotInterface {
 	 * </ul>
 	 * <p>
 	 * Use {@link #getLightBumps()} to check the strengths of the light bumbs.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1234,20 +1245,20 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the Low Side Driver 2 overcurrent sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
 	 *
-	 * @return true if too much current (> 1.6A) is requested.
+	 * @return true if too much current (&gt; 1.6A) is requested.
 	 * @see #readSensors(int sensorId)
 	 */
 	boolean isWheelOvercurrentMainBrush();
 
 	/**
 	 * Gets the state of the Spot button
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1260,21 +1271,20 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the right wheel overcurrent sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
 	 * fresh values.
 	 *
-	 * @return true if too much current (> 1A) is requested.
+	 * @return true if too much current (&gt; 1A) is requested.
 	 * @see #readSensors(int sensorId)
 	 */
 	boolean isRightWheelOvercurrent();
 
 	/**
 	 * Gets the state of the OI song player.
-	 * <p/>
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1288,7 +1298,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the virtual wall sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1301,7 +1311,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the wall sensor.
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1314,7 +1324,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the left wheel sensor
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1327,7 +1337,7 @@ public interface IRobotInterface {
 
 	/**
 	 * Gets the state of the right wheel sensor
-	 * <p/>
+	 * <p>
 	 * <b>NOTE:</b> This method returns a locally stored value previously read
 	 * from the iRobot. It is the client's responsibility to read the sensor
 	 * values from the iRobot prior to calling this method in order to ensure
@@ -1345,7 +1355,7 @@ public interface IRobotInterface {
 	 * Advance LEDs is specified by true or false. The Power LED is specified by
 	 * two values: one for the color and the other for the intensity. Available
 	 * in modes: Safe or Full
-	 * <p/>
+	 * <p>
 	 * Advance and Play LEDs use green LEDs. false = off, true = on <br>
 	 * Power uses a bicolor (red/green) LED. The intensity and color of this LED
 	 * can be controlled with 8-bit resolution.
@@ -1467,7 +1477,7 @@ public interface IRobotInterface {
 	 * @param length
 	 *            an even number less than or equal to 32 (max 16 notes).
 	 * @throws IOException
-	 * @ @see #playSong(int)
+	 * @see #playSong(int)
 	 * @see #song(int, int[])
 	 * @see <a href=
 	 *      "http://www.irobot.com/~/media/MainSite/PDFs/About/STEM/Create/iRobot_Roomba_600_Open_Interface_Spec_0512.pdf">
@@ -1480,6 +1490,7 @@ public interface IRobotInterface {
 	 * 
 	 * @param on
 	 *            If true, turns the tail light on, else off.
+	 * @throws IOException
 	 */
 	void setTailLight(boolean on) throws IOException;
 
@@ -1488,7 +1499,6 @@ public interface IRobotInterface {
 	 * 
 	 * @throws IOException
 	 *
-	 * @
 	 */
 	void stop() throws IOException;
 

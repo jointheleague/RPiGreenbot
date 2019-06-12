@@ -7,18 +7,18 @@ import java.util.Map;
 /**
  * A final class that provides a high level interface to the iRobot series of
  * Roomba/Create robots.
- * <p/>
+ * <p>
  * The names of most of the sensors are derived mostly from the <a href=
  * "https://cdn-shop.adafruit.com/datasheets/create_2_Open_Interface_Spec.pdf" >
  * iRobot Create 2 Open Interface (OI)</a>. It is recommended to read this
  * document in order to get a better understanding of how to work with the
  * robot.
- * <p/>
+ * <p>
  * The default constructor will not return until it has managed to connect with
  * the iRobot via the default serial interface between the computer and the
  * iRobot. This means that when the constructor returns, messages can be sent
  * and received to and from the iRobot.
- * <p/>
+ * <p>
  * <b>NOTE:</b> This class is final; it cannot be extended. Extend
  * {@link IRobotAdapter IRobotAdapter} instead.
  * 
@@ -240,25 +240,21 @@ public final class SimpleIRobot implements IRobotInterface {
 	private Map<Integer, Integer> sensorGroupHigh;
 
 	/**
-	 * Constructor that uses the IOIO instance to communicate with the iRobot.
-	 * Equivalent to using <code>SimpleIRobot(ioio, false, true, true)</code>
+	 * Default constructor of a SimpleRobot instance.
+	 * Equivalent to using <code>SimpleIRobot(false, true, true)</code>
 	 * 
-	 * @param ioio
-	 *            The IOIO instance used to communicate with the iRobot
 	 * @throws IOException
 	 * @throws InterruptedException
 	 * 
-	 * @see #SimpleIRobot(IOIO, boolean, boolean, boolean)
+	 * @see #SimpleIRobot(boolean, boolean, boolean)
 	 */
 	public SimpleIRobot() throws InterruptedException, IOException {
 		this(false, true, true);
 	}
 
 	/**
-	 * Constructor that uses the IOIO instance to communicate with the iRobot.
+	 * Constructor
 	 * 
-	 * @param ioio
-	 *            The IOIO instance used to communicate with the iRobot
 	 * @param debugSerial
 	 *            if true will create a default serial connection with debug
 	 *            true

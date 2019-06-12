@@ -42,7 +42,7 @@ public final class SerialConnection {
 	private static final int COMMAND_START = 128; // Starts the OI. Must be the
 													// first command sent.
 
-	// Constructor of a serial connection between the iRobot and the IOIO board
+	// Constructor of a serial connection between the iRobot and the Rpi
 	private SerialConnection() {
 
 	}
@@ -125,10 +125,8 @@ public final class SerialConnection {
 
 	/**
 	 * Gets a default serial connection to the iRobot. This method returns after
-	 * a connection between the IOIO and the iRobot has been established.
+	 * a connection between the RPi and the iRobot has been established.
 	 * 
-	 * @param ioio
-	 *            the ioio instance used to connect to the iRobot
 	 * @param debug
 	 *            if true establishes a connection that prints out debugging
 	 *            information.
@@ -197,9 +195,6 @@ public final class SerialConnection {
 	 * 
 	 * @return the value as an int
 	 * @throws IOException
-	 * @throws InterruptedException
-	 * 
-	 * 
 	 */
 	public int readSignedByte() throws IOException {
 
@@ -220,8 +215,6 @@ public final class SerialConnection {
 	 * 
 	 * @return the value as an int
 	 * @throws IOException
-	 * @throws InterruptedException
-	 * 
 	 */
 	public int readUnsignedByte() throws IOException {
 		int result = 0;
@@ -241,8 +234,6 @@ public final class SerialConnection {
 	 * 
 	 * @return the value as an int
 	 * @throws IOException
-	 * @throws InterruptedException
-	 * 
 	 */
 	public int readSignedWord() throws IOException {
 		int result = 0;
@@ -264,8 +255,6 @@ public final class SerialConnection {
 	 * 
 	 * @return the value as an int
 	 * @throws IOException
-	 * @throws InterruptedException
-	 * 
 	 */
 	public int readUnsignedWord() throws IOException {
 		int result = 0;
